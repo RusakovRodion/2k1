@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Конкурсный конструктор"</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="menubackground">
+        <div id="menuelements">
+            <div>
+                <button class="menubutton" id="uploadBackground">Фон</button>
+                <input type="file" id="backgroundInput" accept="image/*" style="display: none;">
+
+                <button class="menubutton" id="uploadContestants">Добавить конкурсантов</button>
+                <input type="file" id="contestantsInput" accept="image/*" style="display: none;" multiple>
+                <ul id="contestantList"></ul>
+            </div>
+
+            <div id="columnControls">
+                <p id="ColumnCost">Размерность</p>
+                <button class="menubutton" id="decreaseColumns" style="width: 20%;">&lt;</button>
+                <span id="columnCount">3</span>
+                <button class="menubutton" id="increaseColumns" style="width: 20%;">&gt;</button>
+            </div>
+
+            <button class="menubutton" id="generate">Сгенерировать</button>
+        </div>
+        <button class="menubutton" id="hide">Скрыть</button>
+    </div>
+
+    <div id="container"></div>
+    
+    <script src="script.js"></script>
+    
+</body>
+</html>
