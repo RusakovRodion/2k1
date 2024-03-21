@@ -15,6 +15,8 @@ const menuBackground = document.getElementById('menubackground')
 
 
 
+
+
 let contestants = [];
 let background = '';
 let columns = 2;
