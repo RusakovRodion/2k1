@@ -89,10 +89,10 @@ contestantBackgroundSizeSlider.addEventListener('input', () => {
     let currentValue = parseInt(contestantBackgroundSizeSlider.value);
     contestantBackgroundSizeSpan.innerText = currentValue;
     
-    // Применяем изменения размера фона для каждого участника
-    contestants.forEach((contestantDiv) => {
-        contestantDiv.style.backgroundSize = `${currentValue}%`; // Изменяем размер фона в процентах
-    });
+    let contestantsStyles = document.getElementsByClassName('contestant')
+    for (let i = 0; i < contestantsStyles.length; i++) {
+        contestantsStyles[i].style.backgroundSize = currentValue + 'em';
+    }
 });
 
 //--------- Конец обработки ФОНА ---------

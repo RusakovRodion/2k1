@@ -61,6 +61,16 @@
 }
 /* Конец стилизации кнопок */
 
+::-webkit-scrollbar { /* Webkit */
+    width      : 0;  /* ширина scrollbar'a */
+    background : transparent  /* опционально */
+}
+
+html {
+    -ms-overflow-style : none;  /* IE 10+ */
+    scrollbar-width    : none /* Firefox */
+}
+
 body {
     background-image: url("");
     background-size: cover;
@@ -122,6 +132,8 @@ body {
     overflow: hidden;
     position: relative;
     background-color: rgb(40, 40, 40);
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 /* Фото участника */
