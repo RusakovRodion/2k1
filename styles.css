@@ -1,32 +1,7 @@
-body {
-    background-image: url("");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
-
-#menubackground {
-    background-color: #282828;
-    width: 170px;
-    height: auto;
-    color: lightgray;
-    padding: 10px;
-    text-align: center;
-    border-radius: 0% 0% 15% 0%;
-}
-
-#container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
+/* Стилизация кнопок */
 .menubutton {
-    width: 170px;
-    height: 25px;
+    width: 160px;
+    height: 30px;
     margin-top: 5%;
     border: none;
     outline: none;
@@ -84,52 +59,97 @@ body {
     50% { background-position: 400% 0; }
     100% { background-position: 0 0; }
 }
+/* Конец стилизации кнопок */
 
+body {
+    background-image: url("");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+#menu {
+    color:#fffeeb;
+    position: fixed; /* Фиксированная позиция */
+    top: 0; /* Расположение от верхнего края */
+    left: 0; /* Расположение от левого края */
+    background-color: #282828; /* Цвет фона */
+    padding: 10px; /* Поля вокруг контента */
+    z-index: 1000; /* Порядок слоя (чтобы быть поверх других элементов) */
+    width: 20%; /* Ширина 100% от родительского контейнера */
+    border-radius: 0% 0% 10% 0%;
+    opacity: 1;
+}
+
+#styleSettings {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Две равные колонки */
+    gap: 5px; /* Промежуток между элементами */
+}
+
+.menu-element {
+    height: 5.4em;
+    width: 10em;
+    margin-bottom: 5px; /* Дополнительный отступ между элементами */
+}
+
+#contestantList {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Две равные колонки */
+    gap: 5px; /* Промежуток между элементами */
+}
+
+
+/* Общая рамка с участниками */
+#container {
+    margin-top: 10em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Рамка одного участника */
 .contestant {
-    width: calc(100% / 2);
+    width: 100px;
+    height: 200px;
     text-align: center;
     margin: 20px;
     padding: 10px;
     border-radius: 10%;
     overflow: hidden;
     position: relative;
-    background-color: aliceblue;
+    background-color: rgb(40, 40, 40);
 }
 
-.contestant img {
-    max-width: 60%;
-    max-height: 40%;
-    width: auto;
-    height: 100%;
+/* Фото участника */
+.photo {
+    margin-top: 5%;
+    width: 5em;
+    height: 5em;
     object-fit: cover;
     border-radius: 50%;
-    
 }
 
 .contestant-name {
-    font-weight: bold;
-    margin-top: 10px;
+    margin-top: 1%;
 }
 
-.hearts {
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
-    scale: 50%
-}
-
+/* одна из жизней участника */
 .heart {
     width: 30px;
     margin: 0 5px;
     cursor: pointer;
 }
 
-.cross {
-    display: none;
-    width: 90%;
-    height: 90%;
-    position: absolute;
-    top: 100%;
-    left: 5%;
-    background: url("marker.png") center center / cover no-repeat;
+/* крест окончания жизней */
+.marker {
+    width: 3em;
+    height: 3em;
+    margin-top: 0.2em;
+    margin-left: auto; /* Центрирование по горизонтали */
+    margin-right: auto; /* Центрирование по горизонтали */
+    display: block; /* Установка блочного элемента для правильного выравнивания */
 }
