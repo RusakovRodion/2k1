@@ -46,6 +46,8 @@ let contestantLives = 3;
 let contestantLivesSize = 0;
 let heartPath = 'heart.png';
 let markerPath = 'marker.png';
+let wastedPath = 'wasted.jpg';
+let contestantBackgroundImage = '';
 
 
 
@@ -82,6 +84,7 @@ uploadContestantsBackgroundInput.addEventListener('change', () => {
     contestantsDivs.forEach((contestantDiv) => {
         contestantDiv.style.backgroundImage = `url(${URL.createObjectURL(file)})`;
     });
+    contestantBackgroundImage = `url(${URL.createObjectURL(file)})`;
 });
 
 // Обработчик события ползунка изменения размера заднего фона участника
@@ -325,14 +328,16 @@ function generateContestants() {
             // Проверяем, если все сердца нажаты и затем возвращены, скрываем крестик
             const heartsClicked = heartsContainer.querySelectorAll('.heart[data-clicked="false"]');
             if (heartsClicked.length === 0) {
-                marker.style.display = 'block';
+                marker.style.display = 'none';
                 contestantDiv.style.opacity = '0.85';
                 contestantDiv.style.backgroundColor = 'brown';
+                contestantDiv.style.backgroundImage = `url(${wastedPath})`;
                 contestantName.style.color = 'aliceblue';
             } else {
                 marker.style.display = 'none';
                 contestantDiv.style.opacity = '1';
-                contestantDiv.style.backgroundColor = contestantBackground;
+                contestantDiv.style.backgroundColor = `rgb(40, 40, 40)`;
+                contestantDiv.style.backgroundImage = contestantBackgroundImage;
                 contestantName.style.color = 'black';     
             }
         });
